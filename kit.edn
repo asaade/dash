@@ -1,0 +1,8 @@
+{:full-name "asaade/dash"
+ :ns-name   "asaade.dash"
+ :sanitized "asaade/dash"
+ :name      "dash"
+ :modules   {:root         "modules"
+             :repositories [{:url  "https://github.com/kit-clj/modules.git"
+                             :tag  "master"
+                             :name "kit-modules"}]}}

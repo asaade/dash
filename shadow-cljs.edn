@@ -1,0 +1,13 @@
+{:nrepl {:port 7002}
+ :source-paths ["src/cljs"]
+ :dependencies [[binaryage/devtools "1.0.6"]
+                [nrepl "1.0.0"]
+                [reagent "1.1.1"]
+                [funcool/rumext "2022.04.19-148"]
+                [cljs-ajax "0.8.4"]]
+ :builds       {:app {:target     :browser
+                      :output-dir "target/classes/cljsbuild/public/js"
+                      :asset-path "/js"
+                      :modules    {:app {:entries [asaade.dash.core]
+                                         :init-fn asaade.dash.core/init!}}
+                      :devtools   {:after-load asaade.dash.core/mount-root}}}}

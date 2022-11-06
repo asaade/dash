@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "cross-env": "^7.0.3",
+    "cssnano-preset-advanced": "^5.3.8",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.0.0",
+    "shadow-cljs": "^2.18.0",
+    "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "cssnano": "^5.1.13",
+    "postcss-uncss": "^0.17.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "uncss": "^0.17.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "scripts": {
+    "shadow:watch": "shadow-cljs watch app",
+    "shadow:release": "shadow-cljs release app",
+    "postcss:watch": "cross-env TAILWIND_MODE=watch postcss src/styles/index.css -o ./resources/public/css/style.css --verbose -w",
+    "postcss:release": "cross-env TAILWIND_MODE=build postcss ./src/styles/index.css -o ./resources/public/css/style.css",
+    "clojure:watch": "clj -M:dev",
+    "develop": "run-p -l *:watch",
+    "release": "clj -Sforce -T:build all"
+  }
+}
